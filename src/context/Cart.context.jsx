@@ -13,11 +13,6 @@ export default function CartProvider({ children }) {
     const loadingID = toast.loading("Adding product...");
 
     try {
-      if (!token) {
-        toast.error("You must be logged in to add a product to the cart.");
-        return;
-      }
-
       const options = {
         url: "https://ecommerce.routemisr.com/api/v1/cart",
         method: "POST",
